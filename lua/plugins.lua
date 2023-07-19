@@ -14,6 +14,9 @@ local plugins = {
   -- ESC 键替换方案
   { "max397574/better-escape.nvim" },
 
+  -- https://github.com/nvim-lualine/lualine.nvim
+  -- 状态行
+  { "nvim-lualine/lualine.nvim" },
 }
 
 --------------------------------------------------------------------------- Lazy
@@ -47,3 +50,15 @@ require("better_escape").setup {
   clear_empty_lines = false,
   keys = "<Esc>"
 }
+
+------------------------------------------------------------------------ Lualine
+require('lualine').setup {
+  options = {
+    theme = 'onedark',
+    fmt = string.lower,
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+  }
+}
+
+
