@@ -1,4 +1,11 @@
 local plugins = {
+  -- https://github.com/nvim-tree/nvim-web-devicons
+  { "nvim-tree/nvim-web-devicons" },
+  
+  -- https://github.com/tpope/vim-sleuth
+  -- 自动检测制表符和缩进宽度
+  { "tpope/vim-sleuth" },
+
   -- https://github.com/navarasu/onedark.nvim
   -- 配色方案
   { "navarasu/onedark.nvim", lazy = false, priority = 1000 },
@@ -6,6 +13,7 @@ local plugins = {
   -- https://github.com/max397574/better-escape.nvim
   -- ESC 键替换方案
   { "max397574/better-escape.nvim" },
+
 }
 
 --------------------------------------------------------------------------- Lazy
