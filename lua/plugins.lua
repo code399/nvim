@@ -44,8 +44,14 @@ local plugins = {
   -- https://github.com/nvim-lua/plenary.nvim
   { "nvim-lua/plenary.nvim" },
 
-}
 
+
+
+
+  -- https://github.com/folke/which-key.nvim
+  -- 自定义功能键提示
+  { "folke/which-key.nvim" },
+}
 --------------------------------------------------------------------------- Lazy
 -- https://github.com/folke/lazy.nvim
 -- 插件管理器 
@@ -180,7 +186,7 @@ require("indent_blankline").setup {
 }
 
 ---------------------------------------------------------------------- Autopairs
-require 'nvim-autopairs'.setup {}
+require('nvim-autopairs').setup {}
 
 ---------------------------------------------------------------------- Telescope
 require('telescope').setup {
@@ -188,3 +194,8 @@ require('telescope').setup {
     prompt_prefix = "   ", -- 搜索框提示符 Default: "> "
   },
 }
+
+
+
+require("which-key").setup{}
+
