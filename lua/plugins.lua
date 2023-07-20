@@ -33,6 +33,10 @@ local plugins = {
   -- https://github.com/lukas-reineke/indent-blankline.nvim
   -- 缩进线
   { "lukas-reineke/indent-blankline.nvim" },
+
+  -- https://github.com/windwp/nvim-autopairs
+  -- 成双配对
+  { "windwp/nvim-autopairs" },
 }
 
 --------------------------------------------------------------------------- Lazy
@@ -167,3 +171,7 @@ require("indent_blankline").setup {
   -- 使用 treesitter 确定缩进线位置
   use_treesitter = true,
 }
+
+---------------------------------------------------------------------- Autopairs
+require 'nvim-autopairs'.setup {}
+
