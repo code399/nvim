@@ -17,6 +17,10 @@ local plugins = {
   -- https://github.com/nvim-lualine/lualine.nvim
   -- 状态行
   { "nvim-lualine/lualine.nvim" },
+
+  -- https://github.com/akinsho/bufferline.nvim
+  -- 标签栏
+  { "akinsho/bufferline.nvim", version = "*" },
 }
 
 --------------------------------------------------------------------------- Lazy
@@ -58,6 +62,29 @@ require('lualine').setup {
     fmt = string.lower,
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
+  }
+}
+
+--------------------------------------------------------------------- Bufferline
+require('bufferline').setup {
+  options = {
+    mode = "buffers",
+    number = "ordinal", -- buffer_id,ordinal,both
+    offsets = {
+      { filetype = 'NvimTree' }
+    },
+  },
+  highlights = {
+    buffer_selected = {
+      italic = false
+    },
+    indicator_selected = {
+      fg = {
+        attribute = 'fg',
+        highlight = 'Function'
+      },
+      italic = false
+    }
   }
 }
 
