@@ -29,6 +29,10 @@ local plugins = {
   -- https://github.com/nvim-tree/nvim-tree.lua
   -- 文件资源管理器
   { "nvim-tree/nvim-tree.lua" },
+
+  -- https://github.com/lukas-reineke/indent-blankline.nvim
+  -- 缩进线
+  { "lukas-reineke/indent-blankline.nvim" },
 }
 
 --------------------------------------------------------------------------- Lazy
@@ -106,7 +110,7 @@ require('nvim-treesitter.configs').setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "<S-Tab>", -- 选择 
+      init_selection = "<S-Tab>", -- 选择
       node_incremental = "<Tab>", -- 递增
       node_decremental = "<S-Tab>", -- 递减
     },
@@ -134,4 +138,32 @@ require("nvim-tree").setup {
     root_folder_label = false, -- 根目录显示方式（默认":~:s?$?/..?"）
     special_files = {}, -- 高亮显示文件列表
   }
+}
+
+---------------------------------------------------------------------- Blankline
+require("indent_blankline").setup {
+  indentLine_enabled = 1,
+  -- char = '┊',
+  char = '',
+  filetype_exclude = {
+    "help",
+    "terminal",
+    "lazy",
+    "lspinfo",
+    "TelescopePrompt",
+    "TelescopeResults",
+    "mason",
+    "nvdash",
+    "nvcheatsheet",
+    "",
+  },
+  -- 空行显示缩进线
+  show_trailing_blankline_indent = false,
+  -- 在第一列显示缩进线
+  show_first_indent_level = true,
+  -- 突出显示当前行缩进级别
+  show_current_context = true,
+  show_current_context_start = true,
+  -- 使用 treesitter 确定缩进线位置
+  use_treesitter = true,
 }

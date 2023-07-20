@@ -18,7 +18,8 @@ vim.opt.cmdheight = 1 -- 命令行高为1
 vim.opt.showtabline = 2 -- 始终显示 tabline
 vim.opt.laststatus = 2 -- 始终显示状态行
 -- vim.opt.list = true -- 显示不可见字符
--- vim.opt.listchars = "space:·" -- 空格显示为一个点
+-- vim.opt.listchars:append "eol:↴" -- 显示行尾回车符
+-- vim.opt.listchars:append "space:⋅" -- 显示空格符
 vim.opt.wrap = true -- 自动换行
 vim.opt.breakindent = true -- 自动换行对齐
 vim.opt.linebreak = true -- 整词换行
