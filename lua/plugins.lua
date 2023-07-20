@@ -21,6 +21,10 @@ local plugins = {
   -- https://github.com/akinsho/bufferline.nvim
   -- 标签栏
   { "akinsho/bufferline.nvim", version = "*" },
+
+  -- https://github.com/nvim-treesitter/nvim-treesitter
+  -- 语法高亮
+  { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
 }
 
 --------------------------------------------------------------------------- Lazy
@@ -88,4 +92,23 @@ require('bufferline').setup {
   }
 }
 
-
+--------------------------------------------------------------------- Treesitter
+require('nvim-treesitter.configs').setup {
+  ensure_installed = { "c", "python", "lua", "rust", "toml" },
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<S-Tab>", -- 选择 
+      node_incremental = "<Tab>", -- 递增
+      node_decremental = "<S-Tab>", -- 递减
+    },
+  },
+  ident = { enable = true }, 
+  rainbow = {
+    enable = true,
+  }
+}
