@@ -30,7 +30,7 @@ map('n', "<leader>fg", "<cmd> Telescope live_grep<CR>", {desc = "Live grep"})
 map('n', "<leader>fh", "<cmd> Telescope help_tags<CR>", {desc = "Help page"})
       
 -- Nvim Tree
-map("n", "<leader>n", "<cmd> NvimTreeToggle<CR>", {desc = "Toggle nvimtree"})
+map("n", "<leader>t", "<cmd> NvimTreeToggle<CR>", {desc = "Toggle nvimtree"})
 
 map('n', "<leader>o", ":SymbolsOutline<CR>", {desc = "Toggle outline"});
 
@@ -40,7 +40,7 @@ map("n", "<leader>hp", "<cmd> HopPattern<cr>", {desc = "HopPattern"})
 map("n", "<leader>hl", "<cmd> HopLineStart<cr>", {desc = "HopLineStart"})
 map("n", "<leader>ha", "<cmd> HopAnywhere<cr>", {desc = "HopAnywhere"})
 
-map("n", "<leader>t", "<cmd> TroubleToggle<cr>", {desc = "Toggle trouble list"})
+map("n", "<leader>n", "<cmd> TroubleToggle<cr>", {desc = "Toggle trouble list"})
 
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
     vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)

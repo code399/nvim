@@ -16,5 +16,5 @@ vim.api.nvim_create_autocmd(
 )
 
 require("options")
--- require("keymaps")
+require("keymaps")
 require("plugins")
