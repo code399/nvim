@@ -41,12 +41,12 @@ vim.opt.splitright = true -- 新窗口置于当前窗口的右边
 
 -- Whitespace & Indent
 vim.opt.expandtab = true -- Tab字符转换为空格
-vim.opt.tabstop = 2 -- Tab字符的宽度
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2 -- 缩进宽度
+vim.opt.tabstop = 4 -- Tab字符的宽度
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4 -- 缩进宽度
 vim.opt.shiftround = true -- 缩进时取 shiftwidth 整数
 vim.opt.autoindent = true -- 新行自动缩进对齐当前行
-vim.opt.smartindent = true
+vim.opt.smartindent = true 
 
 -- Search
 vim.opt.ignorecase = true -- 搜索大小写不敏感，除非搜索输入包含大写
