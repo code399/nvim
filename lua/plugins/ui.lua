@@ -108,5 +108,12 @@ return {
         config = function() 
             require("gitsigns").setup()
         end
+    },
+
+    {   -- https://github.com/goolord/alpha-nvim -- 开始菜单
+        "goolord/alpha-nvim",
+        config = function() 
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
     }
 }
