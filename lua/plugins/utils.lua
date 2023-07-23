@@ -52,5 +52,32 @@ return {
             require("neo-tree").setup()
             vim.keymap.set({"n", "v"}, "<leader>e", "<cmd>Neotree toggle<CR>", {desc = "Neo tree"})
         end
+    },
+
+    {   -- https://github.com/max397574/better-escape.nvim
+        "max397574/better-escape.nvim",
+        config = function()
+            require("better_escape").setup {
+                mapping = {"kk", "jj"},
+                timeout = vim.o.timeoutlen,
+                clear_empty_lines = false,
+                keys = "<Esc>"
+            }
+        end
+    },
+
+    {   -- https://github.com/echasnovski/mini.comment -- 注释
+        'echasnovski/mini.comment',
+        version = false,
+        config = function()
+            require("mini.comment").setup()
+        end
+    },
+
+    {   -- https://github.com/folke/which-key.nvim -- 自定义功能键提示
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup()
+        end
     }
 }
