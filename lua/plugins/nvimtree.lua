@@ -1,7 +1,6 @@
--- https://github.com/nvim-tree/nvim-tree.lua
--- 文件资源管理器
+
 return {
-    {
+    {   -- https://github.com/nvim-tree/nvim-tree.lua -- 文件资源管理器
         "nvim-tree/nvim-tree.lua",
         config = function()
             require("nvim-tree").setup {
