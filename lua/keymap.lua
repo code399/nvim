@@ -22,12 +22,12 @@ map('n', '<leader>bd', '<cmd> bdelete<CR>', {desc = "Delete buffer"})
 
 
 -- Telescope
-map('n', "<leader>/", "<cmd> Telescope current_buffer_fuzzy_find<CR>", {desc = "Fuzzily search in current buffer"})
-map('n', "<leader>fo", "<cmd> Telescope oldfiles<CR>", {desc = "Find oldfiles"})
-map('n', "<leader>fb", "<cmd> Telescope buffers<CR>", {desc = "Find existing buffers"})
-map('n', "<leader>ff", "<cmd> Telescope find_files<CR>", {desc = "Find files"})
-map('n', "<leader>fg", "<cmd> Telescope live_grep<CR>", {desc = "Live grep"})
-map('n', "<leader>fh", "<cmd> Telescope help_tags<CR>", {desc = "Help page"})
+-- map('n', "<leader>/", "<cmd> Telescope current_buffer_fuzzy_find<CR>", {desc = "Fuzzily search in current buffer"})
+-- map('n', "<leader>fo", "<cmd> Telescope oldfiles<CR>", {desc = "Find oldfiles"})
+-- map('n', "<leader>fb", "<cmd> Telescope buffers<CR>", {desc = "Find existing buffers"})
+-- map('n', "<leader>ff", "<cmd> Telescope find_files<CR>", {desc = "Find files"})
+-- map('n', "<leader>fg", "<cmd> Telescope live_grep<CR>", {desc = "Live grep"})
+-- map('n', "<leader>fh", "<cmd> Telescope help_tags<CR>", {desc = "Help page"})
       
 -- Nvim Tree
 map("n", "<leader>t", "<cmd> NvimTreeToggle<CR>", {desc = "Toggle nvimtree"})
