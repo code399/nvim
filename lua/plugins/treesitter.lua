@@ -6,7 +6,7 @@ return {
         build = ':TSUpdate',
         config = function()
             require('nvim-treesitter.configs').setup {
-                ensure_installed = { "lua", "rust", "toml" },
+                ensure_installed = { "c", "python", "lua", "rust", "toml" },
                 auto_install = true,
                 highlight = { enable = true },
                 incremental_selection = {
@@ -17,7 +17,7 @@ return {
                         node_decremental = "<S-Tab>", -- 递减
                     },
                 },
-                ident = { enable = true }, 
+                indent = { enable = true }, 
                 rainbow = { enable = true }
             }
         end
