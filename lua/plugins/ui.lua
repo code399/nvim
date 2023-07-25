@@ -1,14 +1,14 @@
 return {
-    {   -- https://github.com/folke/tokyonight.nvim -- 配色方案
+    { -- https://github.com/folke/tokyonight.nvim -- 配色方案
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd[[colorscheme tokyonight-storm]] -- night, storm, day, moon
-        end    
+            vim.cmd [[colorscheme tokyonight-storm]] -- night, storm, day, moon
+        end
     },
 
-    {   -- https://github.com/nvim-lualine/lualine.nvim -- 状态栏
+    { -- https://github.com/nvim-lualine/lualine.nvim -- 状态栏
         "nvim-lualine/lualine.nvim",
         dependencies = {
             -- https://github.com/nvim-tree/nvim-web-devicons -- 图标
@@ -26,7 +26,7 @@ return {
         end
     },
 
-    {   -- https://github.com/utilyre/barbecue.nvim
+    { -- https://github.com/utilyre/barbecue.nvim -- Like winbar
         "utilyre/barbecue.nvim",
         name = "barbecue",
         version = "*",
@@ -43,16 +43,19 @@ return {
         end
     },
 
-    {   -- https://github.com/akinsho/bufferline.nvim -- 标签栏
+    { -- https://github.com/akinsho/bufferline.nvim -- 标签栏
         "akinsho/bufferline.nvim",
         version = "*",
         config = function()
             require('bufferline').setup {
                 options = {
                     mode = "buffers",
-                    number = "ordinal", -- buffer_id,ordinal,both
+                    -- numbers = "both", -- buffer_id,ordinal,both
                     offsets = {
-                        { filetype = 'NvimTree' }
+                        {
+                            filetype = "NvimTree",
+                            separator = true,
+                        },
                     },
                 },
                 highlights = {
@@ -71,7 +74,7 @@ return {
         end
     },
 
-    {   -- https://github.com/lukas-reineke/indent-blankline.nvim -- 缩进线
+    { -- https://github.com/lukas-reineke/indent-blankline.nvim -- 缩进线
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("indent_blankline").setup {
@@ -103,17 +106,17 @@ return {
         end
     },
 
-    {   -- https://github.com/lewis6991/gitsigns.nvim
+    { -- https://github.com/lewis6991/gitsigns.nvim -- 显示 git 后的代码变化
         "lewis6991/gitsigns.nvim",
-        config = function() 
+        config = function()
             require("gitsigns").setup()
         end
     },
 
-    {   -- https://github.com/goolord/alpha-nvim -- 开始菜单
+    { -- https://github.com/goolord/alpha-nvim -- 开始菜单
         "goolord/alpha-nvim",
-        config = function() 
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
     }
 }
