@@ -12,12 +12,12 @@ return {
                 incremental_selection = {
                     enable = true,
                     keymaps = {
-                        init_selection = "<S-Tab>", -- 选择 
-                        node_incremental = "<Tab>", -- 递增
+                        init_selection = "<S-Tab>",   -- 选择
+                        node_incremental = "<Tab>",   -- 递增
                         node_decremental = "<S-Tab>", -- 递减
                     },
                 },
-                indent = { enable = true }, 
+                indent = { enable = true },
                 rainbow = { enable = true }
             }
         end

@@ -11,10 +11,6 @@ return {
             {
                 "j-hui/fidget.nvim",
                 tag = "legacy",
-                event = "LspAttach",
-                opts = {
-                    -- options
-                },
             },
             "nvimdev/lspsaga.nvim",
         },
@@ -23,6 +19,7 @@ return {
             require("neodev").setup()
             require("fidget").setup()
             require("lspsaga").setup()
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
             require("mason").setup({
                 ui = {
                     icons = {
@@ -35,12 +32,16 @@ return {
             require("mason-lspconfig").setup {
                 ensure_installed = {
                     "lua_ls",
-                    "pyright",
                     "rust_analyzer",
+                    "marksman",
+                    "pyright",
+                    "bashls",
                 },
                 handlers = {
                     function(server_name) -- default handler (optional)
-                        require("lspconfig")[server_name].setup {}
+                        require("lspconfig")[server_name].setup {
+                            capabilities = capabilities,
+                        }
                     end,
                     ["pyright"] = function()
                         require("lspconfig").pyright.setup {}
@@ -49,9 +50,8 @@ return {
                         require("lspconfig").lua_ls.setup {
                             settings = {
                                 Lua = {
-                                    diagnostics = {
-                                        globals = { "vim" }
-                                    }
+                                    workspace = { checkThirdParty = false },
+                                    telemetry = { enable = false },
                                 }
                             }
                         }
