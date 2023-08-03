@@ -1,7 +1,8 @@
 return {
-    {
+    { -- https://github.com/hrsh7th/nvim-cmp -- 自动补全
         "hrsh7th/nvim-cmp",
-        dependencies = {
+        event = { "BufReadPost", "BufNewFile" },
+        dependencies = { -- cmp 源
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",

@@ -20,6 +20,7 @@ return {
                     theme = "tokyonight",
                     fmt = string.lower,
                     component_separators = { left = '', right = '' },
+                    -- component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
                 }
             }
@@ -28,6 +29,7 @@ return {
 
     { -- https://github.com/utilyre/barbecue.nvim -- Like winbar
         "utilyre/barbecue.nvim",
+        event = "VeryLazy",
         name = "barbecue",
         version = "*",
         dependencies = {
@@ -46,6 +48,7 @@ return {
     { -- https://github.com/akinsho/bufferline.nvim -- 标签栏
         "akinsho/bufferline.nvim",
         version = "*",
+        event = "VeryLazy",
         config = function()
             require('bufferline').setup {
                 options = {
@@ -76,23 +79,12 @@ return {
 
     { -- https://github.com/lukas-reineke/indent-blankline.nvim -- 缩进线
         "lukas-reineke/indent-blankline.nvim",
+        event = "VeryLazy",
         config = function()
             require("indent_blankline").setup {
                 indentLine_enabled = 1,
-                char = '┊',
-                -- char = '',
-                filetype_exclude = {
-                    "help",
-                    "terminal",
-                    "lazy",
-                    "lspinfo",
-                    "TelescopePrompt",
-                    "TelescopeResults",
-                    "mason",
-                    "nvdash",
-                    "nvcheatsheet",
-                    "",
-                },
+                -- char = '┊',
+                -- -- char = '',
                 -- 空行显示缩进线
                 show_trailing_blankline_indent = false,
                 -- 在第一列显示缩进线
@@ -108,6 +100,7 @@ return {
 
     { -- https://github.com/lewis6991/gitsigns.nvim -- 显示 git 后的代码变化
         "lewis6991/gitsigns.nvim",
+        event = "VeryLazy",
         config = function()
             require("gitsigns").setup()
         end
@@ -116,7 +109,34 @@ return {
     { -- https://github.com/goolord/alpha-nvim -- 开始菜单
         "goolord/alpha-nvim",
         config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+            local alpha = require 'alpha'
+            local dashboard = require 'alpha.themes.dashboard'
+            dashboard.section.header.val = {
+                [[                               __                ]],
+                [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+                [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+                [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+                [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+                [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+            }
+            dashboard.section.buttons.val = {
+                dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+                dashboard.button("SPC f f", "  Find file"),
+                dashboard.button("SPC f g", "  Live grep"),
+                dashboard.button("SPC f e", "  File explorer"),
+                dashboard.button("SPC f o", "󰈢  Recently opened files"),
+                dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
+            }
+            local handle = io.popen('fortune')
+            local fortune = handle:read("*a")
+            handle:close()
+            dashboard.section.footer.val = fortune
+
+            dashboard.config.opts.noautocmd = true
+
+            vim.cmd [[autocmd User AlphaReady echo 'ready']]
+
+            alpha.setup(dashboard.config)
         end
     }
 }
