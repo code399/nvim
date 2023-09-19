@@ -79,7 +79,7 @@ return {
     { -- https://github.com/nvim-tree/nvim-tree.lua -- 文件资源管理器
         "nvim-tree/nvim-tree.lua",
         keys = {
-            { "<leader>fe", "<cmd> NvimTreeToggle<CR>", desc = "Toggle nvimtree" },
+            { "<leader>e", "<cmd> NvimTreeToggle<CR>", desc = "Toggle nvimtree" },
         },
         config = function()
             require("nvim-tree").setup {
